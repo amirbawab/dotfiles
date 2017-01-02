@@ -1,6 +1,6 @@
 # dotfiles
 
-### Terminal themese
+### Terminal themes
 https://github.com/Mayccoll/Gogh/blob/master/content/themes.md#tomorrow-night
 
 ### Powerline
