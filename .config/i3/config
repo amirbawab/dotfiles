@@ -97,12 +97,13 @@ set $workspace0 "0-Music "
 set $workspace1 "1-Terminals "
 set $workspace2 "2-Firefox "
 set $workspace3 "3-IDE "
+set $workspace4 "4-PDF"
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
 bindsym $mod+2 workspace $workspace2
 bindsym $mod+3 workspace $workspace3
-bindsym $mod+4 workspace 4
+bindsym $mod+4 workspace $workspace4
 bindsym $mod+5 workspace 5
 bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
@@ -115,7 +116,7 @@ bindsym $mod+Shift+0 move container to workspace $workspace0
 bindsym $mod+Shift+1 move container to workspace $workspace1
 bindsym $mod+Shift+2 move container to workspace $workspace2
 bindsym $mod+Shift+3 move container to workspace $workspace3
-bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+4 move container to workspace $workspace4
 bindsym $mod+Shift+5 move container to workspace 5
 bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
@@ -128,6 +129,8 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+# shutdown
+bindsym $mod+Shift+p exec systemctl poweroff; mode "default"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -158,8 +161,8 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
-        tray_output primary
+    status_command i3status
+    tray_output primary
 }
 
 # Added by Amir
@@ -190,6 +193,9 @@ exec_always feh --bg-scale /home/amir/i3/wallpaper/green.png
 # Add wifi
 exec_always nm-applet
 
+# Add speaker
+exec volumeicon
+
 # Auto assign applications to workspaces
 # Using the application `xprop`
 assign [class="Firefox"] $workspace2
@@ -198,3 +204,27 @@ assign [class="jetbrains-idea-ce"] $workspace3
 
 # Logout
 bindsym $mod+Shift+s exit
+
+# Colors
+set $based3    #002b36
+set $based2    #073642
+set $based1    #586e75
+set $based0    #657b83
+set $base0     #839496
+set $base1     #93a1a1
+set $base2     #eee8d5
+set $base3     #fdf6e3
+set $yellow    #b58900
+set $orange    #cb4b16
+set $red       #dc322f
+set $magenta   #d33682
+set $violet    #6c71c4
+set $blue      #268bd2
+set $cyan      #2aa198
+set $green     #859900
+
+
+client.focused            $based3   $based2   $base3   $based3  $based2
+client.focused_inactive   $based3   $based3   $base0   $based3  $based3
+client.unfocused          $based3   $based3   $base0   $based3  $based3
+client.urgent             $based3   $magenta  $base3   $based3  $magenta
