@@ -188,13 +188,13 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Set wallpaper
-exec_always feh --bg-scale /home/amir/i3/wallpaper/green.png 
+exec_always feh --bg-scale /home/amir/i3/wallpaper/orange.png 
 
 # Add wifi
 exec_always nm-applet
 
 # Add speaker
-exec volumeicon
+#exec volumeicon
 
 # Auto assign applications to workspaces
 # Using the application `xprop`
@@ -228,3 +228,7 @@ client.focused            $based3   $based2   $base3   $based3  $based2
 client.focused_inactive   $based3   $based3   $base0   $based3  $based3
 client.unfocused          $based3   $based3   $base0   $based3  $based3
 client.urgent             $based3   $magenta  $base3   $based3  $magenta
+
+focus_follows_mouse no
+
+bindsym $mod+t exec "synclient TouchpadOff=$((1-$(synclient | grep TouchpadOff | awk '{print $3}')))"
