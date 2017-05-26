@@ -19,3 +19,10 @@ pacman -S i3
 
 #### Terminal emulator
 urxvt (recommended) or xterm
+
+#### Network manager
+connman
+```
+pacman -S wpa_supplicant connman
+```
+* https://wiki.archlinux.org/index.php/Connman#Troubleshooting
