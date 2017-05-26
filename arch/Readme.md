@@ -18,6 +18,12 @@ pacman -S i3
 * Install font-awesome byt downloading the latest tar (e.g. https://github.com/FortAwesome/Font-Awesome/releases) and moving the font/fontawesome-webfont.ttf file ttf to ~./fonts (create dir if not there)
 * If LXDM is used, then add `xrandr --output HDMI2 --right-of eDP1` to /etc/lxdm/PostLogin. Run xrandr for exact values of HDMI2 and eDP1.
 
+#### Composite manager
+Compton
+```
+pacman -S compton
+```
+
 #### Terminal emulator
 urxvt (recommended) or xterm
 
