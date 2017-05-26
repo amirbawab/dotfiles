@@ -19,7 +19,8 @@ None
 ```
 pacman -S i3
 ```
-* I3 config files can be found under https://github.com/amirbawab/dotfiles/tree/master/.config
+* I3 config: https://github.com/amirbawab/dotfiles/tree/master/.config
+* I3 blur lock: https://github.com/amirbawab/dotfiles/blob/master/scripts/i3blurlock
 
 ### Fonts
 #### Font Awesome
