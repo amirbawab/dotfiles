@@ -51,3 +51,7 @@ xrdb -merge ~/.Xresource
 pacman -S wpa_supplicant connman
 ```
 * https://wiki.archlinux.org/index.php/Connman#Troubleshooting
+
+### Editor
+#### Vim
+vimrc: https://github.com/amirbawab/dotfiles/blob/master/.vimrc
