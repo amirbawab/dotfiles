@@ -1,6 +1,6 @@
-### Arch config:
-#### Display / Login manager
-##### LXDM
+## Arch Linux
+### Display / Login manager
+#### LXDM
 ```
 # Install LXDML
 pacman -S lxdm
@@ -11,36 +11,36 @@ systemctl enable lxdm
 # Allow multi-monitors
 echo "xrandr --output HDMI2 --right-of eDP1" >> /etc/lxdm/PostLogin # Run xrandr for exact values of HDMI2 and eDP1
 ```
-#### Desktop Environment
+### Desktop Environment
 None
 
-#### Window Manager
-##### i3
+### Window Manager
+#### i3
 ```
 pacman -S i3
 ```
 * I3 config files can be found under https://github.com/amirbawab/dotfiles/tree/master/.config
 
-#### Fonts
-##### Font Awesome
+### Fonts
+#### Font Awesome
 Install font-awesome by downloading the latest tar (e.g. https://github.com/FortAwesome/Font-Awesome/releases) and moving the font/fontawesome-webfont.ttf file ttf to ~./fonts (create dir if not there)
 
-##### DejaVu
+#### DejaVu
 ```
 pacman -S ttf-dejavu
 ```
 
-#### Composite manager
+### Composite manager
 Compton
 ```
 pacman -S compton
 ```
 
-#### Terminal emulator
-##### urxvt
+### Terminal emulator
+#### urxvt
 
-#### Network manager
-##### connman
+### Network manager
+#### connman
 ```
 pacman -S wpa_supplicant connman
 ```
