@@ -38,6 +38,11 @@ pacman -S compton
 
 ### Terminal emulator
 #### urxvt
+Xresources: https://github.com/amirbawab/dotfiles/blob/master/.Xresources
+```
+# Reload Xresources
+xrdb -merge ~/.Xresource
+```
 
 ### Network manager
 #### connman
