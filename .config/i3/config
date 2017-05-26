@@ -101,6 +101,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 bindsym $mod+Shift+p exec systemctl poweroff; mode "default"
 
 # Lock screen
+#bindsym $mod+p exec "i3blurlock"
 bindsym $mod+p exec "i3lock -c 000000"
 
 # Logout
