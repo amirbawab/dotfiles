@@ -11,6 +11,16 @@ systemctl enable lxdm
 # Allow multi-monitors
 echo "xrandr --output HDMI2 --right-of eDP1" >> /etc/lxdm/PostLogin # Run xrandr for exact values of HDMI2 and eDP1
 ```
+##### Theme
+Archlinux: https://github.com/amirbawab/dotfiles/tree/master/arch/lxdm-theme
+```
+# Copy theme to lxdm themes
+sudo cp -avr Archlinux/ /usr/share/lxdm/themes/
+
+# Set as default theme
+vim /etc/lxdm/lxdm.conf
+```
+
 ### Desktop Environment
 None
 
