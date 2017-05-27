@@ -1,4 +1,7 @@
 ## Arch Linux
+### Installing Arch
+Instructions: https://github.com/amirbawab/dotfiles/blob/master/arch/Install-arch.md
+
 ### Display / Login manager
 #### LXDM
 ```
