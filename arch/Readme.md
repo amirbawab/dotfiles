@@ -55,3 +55,11 @@ pacman -S wpa_supplicant connman
 ### Editor
 #### Vim
 vimrc: https://github.com/amirbawab/dotfiles/blob/master/.vimrc
+
+### Shell
+#### Bash
+bashrc++: https://github.com/amirbawab/dotfiles/blob/master/.bashrc%2B%2B
+```
+# Source .bashrc++ from .bashrc
+echo "source ~/.bashrc++" >> ~/.bashrc
+```
