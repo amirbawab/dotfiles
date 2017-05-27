@@ -10,10 +10,11 @@ general {
 order += "load"
 order += "battery 0"
 # order += "cpu_temperature 0"
-order += "path_exists harold"
-order += "disk /home"
+# order += "path_exists harold"
+#order += "disk /home"
 order += "volume master"
 order += "time"
+order += "wireless wlp4s0"
 
 battery 0 {
     format = " %status %percentage %remaining (%consumption)"
@@ -56,4 +57,9 @@ disk /home {
 load {
     format = " %1min %5min %15min"
     max_threshold = 7
+}
+
+wireless wlp4s0 {
+  format_up = "  %essid (%quality)"
+  format_down = "  NO CARRIER"
 }
