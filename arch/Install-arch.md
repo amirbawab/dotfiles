@@ -1,5 +1,10 @@
 ## Install Arch linux
 
+*This instruction sheet is based on `LearnLinux.tv` youtube channel.*  
+*Youtube videos*:
+* <a href="https://www.youtube.com/watch?v=lizdpoZj_vU">Video 1</a>
+* <a href="https://www.youtube.com/watch?v=GCUmGtCYPWM">Video 2</a>
+
 ### Download Arch image
 Latest image: https://www.archlinux.org/download/
 
@@ -120,6 +125,23 @@ exit
 # Unmount partitions
 umount /mnt/home
 umount /mnt
+
+# Reboot
+reboot
+```
+
+### Arch post install
+```
+# Set locale system wide
+localectl set-locale LANG="en_US.UTF-8"
+
+# Activate swap
+mkswap /dev/sda2
+
+# Modify fstab
+echo -e "$(blkid | grep sda2 | awk '{print $2}' | sed -e 's/"//g')\tnone\tswap\tdefaults\t0 0" >> /etc/fstab
+
+# If SSD is used, then add in `/etc/fstab` the `discard` option in dir `/` and `/home` (e.g. rw,discard,realtime,...)
 
 # Reboot
 reboot
