@@ -12,7 +12,7 @@ URxvt.font: xft:DejaVu Sans Mono:style=Book:pixelsize=20
 
 ! Set transparency
 urxvt*depth: 32
-urxvt*background: rgba:0000/0000/0200/aaaa
+urxvt*background: rgba:0000/0000/0200/bbbb
 
 !!!!!!!!!!!!!!!!!
 !               !
