@@ -157,7 +157,7 @@ pacman -S xf86-input-libinput
 ```
 * Install Xorg display server
 ```
-pacman -S xorg-server xorg-xinit xorg-server-utils mesa
+pacman -S xorg-server xorg-xinit xorg-apps mesa
 ```
 * Allow 32-bitpackages by editing `/etc/pacman.conf` and uncommenting `[multilib]` block
 * [If not virtual machine] Install intel video card driver. Run `lspci` to know if which graphic card exists
