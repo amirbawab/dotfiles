@@ -26,7 +26,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # Rofi
-# bindsym $mod+d exec dmenu_run # Uncomment if Rofi not installed
+# bindsym $mod+d exec dmenu_run # Uncomment this if Rofi not installed
 bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 800 -opacity "80" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "DejaVu Sans Mono 18"
 
 #################################
@@ -101,8 +101,8 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 bindsym $mod+Shift+p exec systemctl poweroff; mode "default"
 
 # Lock screen
-#bindsym $mod+p exec "i3blurlock"
-bindsym $mod+p exec "i3lock -c 000000"
+bindsym $mod+p exec "i3blurlock"
+#bindsym $mod+p exec "i3lock -c 000000" # Uncomment this if i3blurlock not installed
 
 # Logout
 bindsym $mod+Shift+s exit
@@ -216,7 +216,8 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 
 # Configure i3bar
 bar {
-    status_command i3status
+    #status_command i3status # Uncomment this if i3blocks not installed
+    status_command SCRIPT_DIR=/usr/lib/i3blocks i3blocks
     position top
     tray_output primary
     colors {
