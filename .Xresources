@@ -107,3 +107,13 @@ rofi.color-normal: argb: 00393939, #ffffff, argb: 00393939, #268bd2, #ffffff
 rofi.color-active: #393939, #268bd2, #393939, #268bd2, #205171
 rofi.color-urgent: #393939, #f3843d, #393939, #268bd2, #ffc39c
 
+!!!!!!!!!!!!!!!!!
+!               !
+! Ctrl+Arrows   !
+!               !
+!!!!!!!!!!!!!!!!!
+
+URxvt.keysym.Control-Up:      \033[1;5A
+URxvt.keysym.Control-Down:    \033[1;5B
+URxvt.keysym.Control-Left:    \033[1;5D
+URxvt.keysym.Control-Right:   \033[1;5C
