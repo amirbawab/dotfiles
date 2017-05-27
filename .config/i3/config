@@ -216,8 +216,8 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 
 # Configure i3bar
 bar {
-    #status_command i3status # Uncomment this if i3blocks not installed
-    status_command SCRIPT_DIR=/usr/lib/i3blocks i3blocks
+    status_command i3status
+    #status_command SCRIPT_DIR=/usr/lib/i3blocks i3blocks # Uncomment this if you want to use i3blocks
     position top
     tray_output primary
     colors {
