@@ -59,8 +59,8 @@ mkfs.ext4 /dev/sda1
 mkfs.ext4 /dev/sda3
 ```
 
-### Set Wifi
-Internet connection through Wifi can be established using `netctl`:
+### Install Arch packages into created partitions
+* Internet connection through Wifi can be established using `netctl`:
 ```
 # Copy a configuration example
 cp /etc/netctl/examples/wireless-wpa /etc/netctl/home-wifi
@@ -70,11 +70,9 @@ cp /etc/netctl/examples/wireless-wpa /etc/netctl/home-wifi
 # Connect
 cd /etc/netctl/ && netctl start home-wifi
 ```
-
-### Install Arch packages into created partitions
 * Mount paritions
 ```
-mkdir -p /mnt/home
+mkdir /mnt/home
 mount /dev/sda1 /mnt
 mount /dev/sda3 /mnt/home
 ```
@@ -91,7 +89,7 @@ genfstab -U -p /mnt >> /mnt/etc/fstab
 arch-chroot /mnt
 
 # Install packages
-pacman -Sy openssh grub-bios linux-headers linux-lts linux-lts-headers wpa_supplicant wireless_tools
+pacman -S vim openssh grub-bios linux-headers linux-lts linux-lts-headers wpa_supplicant wireless_tools wpa_actiond dialog
 
 # Edit /etc/locale.gen by uncommenting `en_US.UTF-8 UTF-8`
 
@@ -128,10 +126,7 @@ umount /mnt
 
 # Reboot
 reboot
-```
 
-### Arch post install
-```
 # Set locale system wide
 localectl set-locale LANG="en_US.UTF-8"
 
@@ -145,4 +140,14 @@ echo -e "$(blkid | grep sda2 | awk '{print $2}' | sed -e 's/"//g')\tnone\tswap\t
 
 # Reboot
 reboot
+
+# Copy a configuration example
+cp /etc/netctl/examples/wireless-wpa /etc/netctl/home-wifi
+
+# Configure file by editing /etc/netctl/home-wifi and change interface, essid and key values
+
+# Connect
+cd /etc/netctl/ && netctl start home-wifi
+
+
 ```
