@@ -71,4 +71,13 @@ sudo pacman -S python-pip
 
 # Install powerline
 sudo pip install powerline-status
+
+# Install fonts
+mkdir /tmp/fonts
+
+# Clone powerline fonts
+git clone https://github.com/powerline/fonts.git
+
+# Install fonts
+cd fonts && ./install.sh
 ```
