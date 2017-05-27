@@ -8,7 +8,9 @@
 URxvt.scrollBar: false
 
 ! Set font. `pacman -S ttf-dejavu`
-URxvt.font: xft:DejaVu Sans Mono:style=Book:pixelsize=20
+! If powerline is installed, then use the font '... for Powerline' installed from the powerline repo
+!URxvt.font: xft:DejaVu Sans Mono:style=Book:pixelsize=20
+URxvt.font: xft:DejaVu Sans Mono for Powerline:style=Book:pixelsize=20
 
 ! Set transparency
 urxvt*depth: 32
