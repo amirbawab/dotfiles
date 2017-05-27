@@ -140,7 +140,9 @@ echo -e "$(blkid | grep sda2 | awk '{print $2}' | sed -e 's/"//g')\tnone\tswap\t
 
 # Reboot
 reboot
-
+```
+* Set up Wifi
+```
 # Copy a configuration example
 cp /etc/netctl/examples/wireless-wpa /etc/netctl/home-wifi
 
@@ -148,6 +150,43 @@ cp /etc/netctl/examples/wireless-wpa /etc/netctl/home-wifi
 
 # Connect
 cd /etc/netctl/ && netctl start home-wifi
+```
+* Install touchpad driver
+```
+pacman -S xf86-input-libinput
+```
+* Install Xorg display server
+```
+pacman -S xorg-server xorg-xinit xorg-server-utils mesa
+```
+* Allow 32-bitpackages by editing `/etc/pacman.conf` and uncommenting `[multilib]` block
+* [If not virtual machine] Install intel video card driver. Run `lspci` to know if which graphic card exists
+```
+pacman -S xf86-video-intel lib32-intel-dri lib32-mesa lib32-libgl
+```
+* [If virtual machine] Install the following driver:
+```
+pacman -S virtualbox-guest-utils
+```
+* Create a user
+```
+# Install sudo
+pacman -S sudo
 
+# Uncomment %wheel ALL=(ALL) ALL
+visudo
 
+# Create user
+useradd -m -G wheel -s /bin/bash foo
+
+# Change password
+passwd foo
+```
+* Rename machine
+```
+# Set hostname
+hostnamectl set-hostname foo
+
+# Reboot machine
+reboot
 ```
