@@ -4,3 +4,8 @@ alias l="ls"
 
 # Alias for piping into clibpard (e.g. 'echo -n testing | clipcopy')
 alias clipcopy="xclip -selection clipboard -i"
+
+# Use powerline in bash if installed
+if [ -f /usr/lib/python*/site-packages/powerline/bindings/bash/powerline.sh ]; then
+    source /usr/lib/python*/site-packages/powerline/bindings/bash/powerline.sh
+fi
