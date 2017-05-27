@@ -133,11 +133,11 @@ bindsym $mod+t exec "synclient TouchpadOff=$((1-$(synclient | grep TouchpadOff |
 #################################
 
 # Set workspace variabes
-set $workspace0 "0-Music "
-set $workspace1 "1-Terminals "
-set $workspace2 "2-Firefox "
-set $workspace3 "3-IDE "
-set $workspace4 "4-PDF"
+set $workspace0 ""
+set $workspace1 ""
+set $workspace2 ""
+set $workspace3 ""
+set $workspace4 ""
 
 # Switch to workspace
 bindsym $mod+1 workspace $workspace1
