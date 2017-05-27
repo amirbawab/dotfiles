@@ -55,3 +55,72 @@ mkfs.ext4 /dev/sda3
 ```
 
 ### Set Wifi
+Internet connection through Wifi can be established using `netctl`:
+```
+# Copy a configuration example
+cp /etc/netctl/examples/wireless-wpa /etc/netctl/home-wifi
+
+# Configure file by editing /etc/netctl/home-wifi and change interface, essid and key values
+
+# Connect
+cd /etc/netctl/ && netctl start home-wifi
+```
+
+### Install Arch packages into created partitions
+* Mount paritions
+```
+mkdir -p /mnt/home
+mount /dev/sda1 /mnt
+mount /dev/sda3 /mnt/home
+```
+* Install Arch base packages and configure system
+```
+# Install packages into OS partition, if an error occured during this installation, then edit /etc/pacman.d/mirrorlist and swap the first sever with another one in the list
+pacstrap -i /mnt base
+> press enter to install default all
+
+# Generate fstab
+genfstab -U -p /mnt >> /mnt/etc/fstab
+
+# Chroot into OS partition mounted at /mnt
+arch-chroot /mnt
+
+# Install packages
+pacman -Sy openssh grub-bios linux-headers linux-lts linux-lts-headers wpa_supplicant wireless_tools
+
+# Edit /etc/locale.gen by uncommenting `en_US.UTF-8 UTF-8`
+
+# Generate locale
+locale-gen
+
+# Configure timezone 
+ln -sf /usr/share/zoneinfo/America/Montreal /etc/localtime
+
+# Configure clock
+hwclock --systohc --utc
+
+# Enable ssh service at boot time
+systemctl enable sshd.service
+
+# Create root password
+passwd
+
+# Install grub bootloader
+grub-install --target=i386-pc --recheck /dev/sda
+
+# Copy grub.mo
+cp /usr/share/locale/en\@quot/LC_MESSAGES/grub.mo /boot/grub/locale/en.mo
+
+# Create grub configuration 
+grub-mkconfig -o /boot/grub/grub.cfg
+
+# Exit arch-chroot session
+exit
+
+# Unmount partitions
+umount /mnt/home
+umount /mnt
+
+# Reboot
+reboot
+```
