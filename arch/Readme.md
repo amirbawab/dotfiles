@@ -63,3 +63,12 @@ bashrc++: https://github.com/amirbawab/dotfiles/blob/master/.bashrc%2B%2B
 # Source .bashrc++ from .bashrc
 echo "source ~/.bashrc++" >> ~/.bashrc
 ```
+
+##### Powerline (optional)
+```
+# Install python pip
+sudo pacman -S python-pip
+
+# Install powerline
+sudo pip install powerline-status
+```
