@@ -1,5 +1,5 @@
 # Alias for list
-alias ll="ls -alF"
+alias ll="ls -alFN"
 alias l="ls"
 
 # Alias for piping into clibpard (e.g. 'echo -n testing | clipcopy')
