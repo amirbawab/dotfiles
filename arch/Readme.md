@@ -55,7 +55,7 @@ pacman -S compton
 Xresources: https://github.com/amirbawab/dotfiles/blob/master/.Xresources
 ```
 # Reload Xresources
-xrdb -merge ~/.Xresource
+xrdb -merge ~/.Xresources
 ```
 
 ### Network manager
