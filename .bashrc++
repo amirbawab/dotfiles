@@ -1,5 +1,8 @@
+# Remove ' from ls command terminal output
+export QUOTING_STYLE=literal
+
 # Alias for list
-alias ll="ls -alFN"
+alias ll="ls -alF"
 alias l="ls"
 
 # Alias for piping into clibpard (e.g. 'echo -n testing | clipcopy')
