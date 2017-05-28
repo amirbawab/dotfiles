@@ -5,6 +5,9 @@ export QUOTING_STYLE=literal
 alias ll="ls -alF"
 alias l="ls"
 
+# Alias for grep
+alias grep='grep -n --color'
+
 # Alias for piping into clibpard (e.g. 'echo -n testing | clipcopy')
 alias clipcopy="xclip -selection clipboard -i"
 
