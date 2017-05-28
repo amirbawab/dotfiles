@@ -14,7 +14,7 @@ URxvt.font: xft:DejaVu Sans Mono for Powerline:style=Book:pixelsize=20
 
 ! Set transparency
 urxvt*depth: 32
-urxvt*background: rgba:0000/0000/0200/bbbb
+urxvt*background: rgba:0000/0000/0200/9999
 
 !!!!!!!!!!!!!!!!!
 !               !
