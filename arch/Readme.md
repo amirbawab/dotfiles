@@ -49,6 +49,7 @@ Compton
 ```
 pacman -S compton
 ```
+* Compton.json: https://github.com/amirbawab/dotfiles/blob/master/.config/compton.conf
 
 ### Terminal emulator
 #### urxvt
