@@ -1,0 +1,4 @@
+# Source powerline python
+if [ -f /usr/lib/python*/site-packages/powerline/bindings/bash/powerline.sh ]; then
+    source /usr/lib/python*/site-packages/powerline/bindings/bash/powerline.sh
+fi

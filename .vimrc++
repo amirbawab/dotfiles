@@ -1,0 +1,16 @@
+" General
+syntax on
+set number
+set tabstop=4
+set autoindent
+set incsearch
+set hlsearch
+set shiftwidth=4
+set expandtab
+set mouse=a
+
+" Comment this line if powerline is not installed
+source ~/.vimrc_powerline
+
+" Comment this line if vundle is not installed
+source ~/.vimrc_vundle
