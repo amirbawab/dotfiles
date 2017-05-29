@@ -68,11 +68,24 @@ pacman -S wpa_supplicant connman
 
 ### Editor
 #### Vim
-vimrc: https://github.com/amirbawab/dotfiles/blob/master/.vimrc
+vimrc++: https://github.com/amirbawab/dotfiles/blob/master/.vimrc%2B%2B
+vimrc_powerline: https://github.com/amirbawab/dotfiles/blob/master/.vimrc_powerline
+vimrc_vundle: https://github.com/amirbawab/dotfiles/blob/master/.vimrc_vundle
+```
+# Source .vimrc++ from .vimrc
+echo "source ~/.vimrc++" >> ~/.vimrc
+```
+
+##### Vundle (optional)
+```
+# Source: https://github.com/VundleVim/Vundle.vim#quick-start
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+```
 
 ### Shell
 #### Bash
 bashrc++: https://github.com/amirbawab/dotfiles/blob/master/.bashrc%2B%2B
+bashrc_powerline: https://github.com/amirbawab/dotfiles/blob/master/.bashrc_powerline
 ```
 # Source .bashrc++ from .bashrc
 echo "source ~/.bashrc++" >> ~/.bashrc
