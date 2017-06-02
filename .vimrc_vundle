@@ -1,3 +1,6 @@
+""""""""""""""""
+"    Vundle
+""""""""""""""""
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -7,8 +10,28 @@ call vundle#begin()
 " Dracula theme
 Plugin 'dracula/vim'
 
+" NERDTree
+Plugin 'scrooloose/nerdtree'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+"""""""""""""""""
 " Set color theme
+"""""""""""""""""
 color dracula
+
+"""""""""""""""""
+" Set NERDTree
+"""""""""""""""""
+" Open automatically
+autocmd vimenter * NERDTree
+
+" Close window if NERDTree is the only window left
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" Toggle NERDTree with ctrl+n
+map <C-n> :NERDTreeToggle<CR>
+
+" Focus cursor on the file window
+autocmd VimEnter * wincmd p
