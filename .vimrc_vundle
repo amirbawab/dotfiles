@@ -13,6 +13,9 @@ Plugin 'dracula/vim'
 " NERDTree
 Plugin 'scrooloose/nerdtree'
 
+" Vim Surround
+Plugin 'tpope/vim-surround'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
