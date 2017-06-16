@@ -8,6 +8,7 @@ set hlsearch
 set shiftwidth=4
 set expandtab
 set mouse=a
+set cursorline
 
 " Comment this line if powerline is not installed
 source ~/.vimrc_powerline
