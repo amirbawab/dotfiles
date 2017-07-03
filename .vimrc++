@@ -9,6 +9,7 @@ set shiftwidth=4
 set expandtab
 set mouse=a
 set cursorline
+set colorcolumn=110
 
 " Comment this line if powerline is not installed
 source ~/.vimrc_powerline
