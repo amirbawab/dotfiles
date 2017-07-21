@@ -16,6 +16,9 @@ Plugin 'scrooloose/nerdtree'
 " Vim Surround
 Plugin 'tpope/vim-surround'
 
+" Markdown Table of Contents
+Plugin 'mzlogin/vim-markdown-toc'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
