@@ -15,6 +15,11 @@ order += "battery 0"
 order += "volume master"
 order += "time"
 order += "wireless wlp4s0"
+order += "path_exists VPN"
+
+path_exists VPN {
+        path = "/proc/sys/net/ipv4/conf/ppp0"
+}
 
 battery 0 {
     format = " %status %percentage %remaining (%consumption)"
