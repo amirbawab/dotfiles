@@ -66,6 +66,33 @@ pacman -S wpa_supplicant connman
 ```
 * https://wiki.archlinux.org/index.php/Connman#Troubleshooting
 
+##### VPN
+**Install PPTP Client**
+```
+pacman -S pptp
+```
+* https://wiki.archlinux.org/index.php/PPTP_Client
+
+**Register a VPN server**
+```
+pptpsetup --create my_tunnel --server vpn.example.com --username alice --password foo --encrypt
+```
+
+**Remove a VPN server**
+```
+pptpsetup --delete my_tunnel
+```
+
+**Connect to VPN server**
+```
+pon my_tunnel
+```
+
+**Disconnect from a VPN server**
+```
+poff my_tunnel
+```
+
 ### Editor
 #### Vim
 * vimrc++: https://github.com/amirbawab/dotfiles/blob/master/.vimrc%2B%2B
