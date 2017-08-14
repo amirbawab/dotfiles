@@ -93,7 +93,7 @@ pon my_tunnel
 poff my_tunnel
 ```
 
-**Route all traffic**
+**Route all traffic**  
 Traffic routing must be done after connecting to the VPN server
 ```
 # Check the ip route table before any modification
