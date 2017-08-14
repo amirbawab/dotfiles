@@ -93,6 +93,22 @@ pon my_tunnel
 poff my_tunnel
 ```
 
+**Route all traffic**
+Traffic routing must be done after connecting to the VPN server
+```
+# Check the ip route table before any modification
+# Keep track of the "default" row as this is needed
+# to revert changes/restore default configurations
+ip route
+(example "default" row output: default via 1.2.3.4 dev wlp4s0)
+
+# Route default to ppp0
+ip route replace default dev ppp0
+
+# Route restore previous routing configuration
+ip route replace default via 1.2.3.4 dev wlp4s0
+```
+
 ### Editor
 #### Vim
 * vimrc++: https://github.com/amirbawab/dotfiles/blob/master/.vimrc%2B%2B
