@@ -1,6 +1,9 @@
 # Remove ' from ls command terminal output
 export QUOTING_STYLE=literal
 
+# Let git use vim as default editor
+export GIT_EDITOR=vim
+
 # Alias for list
 alias ll="ls -alF"
 alias l="ls"
