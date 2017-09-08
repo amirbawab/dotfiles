@@ -10,6 +10,7 @@ set expandtab
 set mouse=a
 set cursorline
 set colorcolumn=110
+set relativenumber
 
 " Comment this line if powerline is not installed
 source ~/.vimrc_powerline
