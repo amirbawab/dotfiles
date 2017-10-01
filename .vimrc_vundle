@@ -10,6 +10,9 @@ call vundle#begin()
 " Dracula theme
 Plugin 'dracula/vim'
 
+" Solarized
+Plugin 'altercation/vim-colors-solarized'
+
 " NERDTree
 Plugin 'scrooloose/nerdtree'
 
@@ -25,7 +28,9 @@ filetype plugin indent on    " required
 """""""""""""""""
 " Set color theme
 """""""""""""""""
-color dracula
+" color dracula
+set background=dark
+colorscheme solarized
 
 """""""""""""""""
 " Set NERDTree
