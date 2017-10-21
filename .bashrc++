@@ -12,7 +12,8 @@ alias l="ls"
 alias grep='grep -n --color'
 
 # Alias for piping into clibpard (e.g. 'echo -n testing | clipcopy')
-alias clipcopy="xclip -selection clipboard -i"
+alias copytext="xclip -selection clipboard -i"
+alias copyimage="xclip -selection clipboard -t image/png -i"
 
 # Comment this line if powerline is not installed
 source ~/.bashrc_powerline
