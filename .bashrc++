@@ -11,7 +11,7 @@ alias l="ls"
 # Alias for grep
 alias grep='grep -n --color'
 
-# Alias for piping into clibpard (e.g. 'echo -n testing | clipcopy')
+# Alias for piping into clibpard (e.g. 'echo -n testing | copytext', or 'cat image.png | copyimage')
 alias copytext="xclip -selection clipboard -i"
 alias copyimage="xclip -selection clipboard -t image/png -i"
 
