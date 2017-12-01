@@ -43,6 +43,9 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 " Toggle NERDTree with ctrl+n
 map <C-n> :NERDTreeToggle<CR>
+map <C-l> :tabn<CR>
+map <C-h> :tabp<CR>
+map <C-t> :tabnew<CR>
 
 " Focus cursor on the file window
 autocmd VimEnter * wincmd p
