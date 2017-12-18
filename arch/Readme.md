@@ -60,6 +60,12 @@ xrdb -merge ~/.Xresources
 ```
 
 ### Network manager
+#### wicd
+```
+pacman -S wicd
+```
+* https://wiki.archlinux.org/index.php/wicd
+
 #### connman
 ```
 pacman -S wpa_supplicant connman
