@@ -115,13 +115,13 @@ bindsym $mod+Shift+s exit
 
 # Pulse Audio controls 
 # https://faq.i3wm.org/question/3747/enabling-multimedia-keys/?answer=3759#post-id-3759
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id "for SINK in `pacmd list-sinks | grep 'index:' | cut -b12-`; do  pactl set-sink-volume $SINK +5%; done" 
+bindsym XF86AudioLowerVolume exec --no-startup-id "for SINK in `pacmd list-sinks | grep 'index:' | cut -b12-`; do  pactl set-sink-volume $SINK -5%; done"
+bindsym XF86AudioMute exec --no-startup-id "for SINK in `pacmd list-sinks | grep 'index:' | cut -b12-`; do  pactl set-sink-mute $SINK toggle; done"
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 5
-bindsym XF86MonBrightnessDown exec xbacklight -dec 5
+bindsym XF86MonBrightnessUp exec xbacklight -inc 2
+bindsym XF86MonBrightnessDown exec xbacklight -dec 2
 
 # Toggle touchpad
 bindsym $mod+t exec "synclient TouchpadOff=$((1-$(synclient | grep TouchpadOff | awk '{print $3}')))"
@@ -167,6 +167,8 @@ bindsym $mod+Shift+9 move container to workspace 9
 assign [class="Firefox"] $workspace2
 assign [class="jetbrains-clion"] $workspace3
 assign [class="jetbrains-idea-ce"] $workspace3
+assign [class="jetbrains-idea"] $workspace3
+assign [class="VirtualBox Manager"] $workspace4
 
 # Resize window (you can also use the mouse for that)
 mode "resize" {
@@ -216,6 +218,7 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 
 # Configure i3bar
 bar {
+    #status_command i3litebar
     status_command i3status
     #status_command SCRIPT_DIR=/usr/lib/i3blocks i3blocks # Uncomment this if you want to use i3blocks
     position top
@@ -236,7 +239,14 @@ bar {
 #################################
 
 # Set wallpaper
+#exec_always feh --bg-scale /home/amir/wallpapers/arch-wp1.jpg
 exec_always feh --bg-scale /home/amir/wallpapers/arch.jpg
 
 # Set composite manager
 exec --no-startup-id compton -f
+
+# Set nm-applet
+exec --no-startup-id wicd-client -t
+
+# Set redshift
+exec --no-startup-id redshift
