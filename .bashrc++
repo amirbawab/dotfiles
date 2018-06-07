@@ -15,9 +15,25 @@ alias grep='grep --color'
 alias copytext="xclip -selection clipboard -i"
 alias copyimage="xclip -selection clipboard -t image/png -i"
 
+# Comment this line if powerline is not installed
+source ~/.bashrc_powerline
+
 # Change screen brightness
 alias brightness_up="xbacklight -inc 2"
 alias brightness_down="xbacklight -dec 2"
+volume() {
+    if [[ $# -ne 2 ]]; then
+        echo -e "Wrong usage\n    volume 0 +5"
+        return 1
+    fi
+    pactl set-sink-volume ${1:-0} $2%
+}
 
-# Comment this line if powerline is not installed
-source ~/.bashrc_powerline
+# Connect HDMI
+hdmi() {
+    if [[ $# -ne 1 ]]; then
+        echo -e "Wrong usage\n    hdmi 1"
+        return 1
+    fi
+    xrandr --output HDMI$1 --auto
+}
