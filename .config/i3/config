@@ -168,6 +168,7 @@ bindsym $mod+Shift+9 move container to workspace 9
 
 # Auto assign applications to workspaces using the application `xprop`
 assign [class="Firefox"] $workspace2
+assign [class="Google-chrome"] $workspace2
 assign [class="jetbrains-clion"] $workspace3
 assign [class="jetbrains-idea-ce"] $workspace3
 assign [class="jetbrains-idea"] $workspace3
