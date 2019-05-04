@@ -25,15 +25,27 @@ Plugin 'mzlogin/vim-markdown-toc'
 " Git Gutter
 Plugin 'airblade/vim-gitgutter'
 
+" GrubBox
+Plugin 'morhetz/gruvbox'
+
+" Command T
+Plugin 'Command-T'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
 """""""""""""""""
 " Set color theme
 """""""""""""""""
-" color dracula
-set background=dark
-colorscheme solarized
+" Dracular
+"" color dracula
+"" set background=dark
+"" colorscheme solarized
+
+" GruvBox
+set bg=dark
+let g:gruvbox_invert_selection=0
+colorscheme gruvbox
 
 """""""""""""""""
 " Set NERDTree
@@ -52,3 +64,6 @@ map <C-t> :tabnew<CR>
 
 " Focus cursor on the file window
 autocmd VimEnter * wincmd p
+
+" Commant-T
+map <C-p> :CommandT<CR>
